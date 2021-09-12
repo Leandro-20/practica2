@@ -16,13 +16,12 @@ function App() {
     setColor(color === 'blue' ? 'red': 'blue');
   };
 //lista de compras
-  const lista =[]
-  const [compras, setCompra]=useState();
+  const [compras, setCompra]=useState([]);
   const listaA = ()=>{
   const valor = document.getElementById("lista").value
-  lista.push(compras)
-  setCompra(valor)
-  console.log(lista)
+  compras.push(valor)
+  setCompra(compras)
+  console.log(compras)
   }
   return (
     <div className="App">
@@ -33,7 +32,7 @@ function App() {
         <button style={{ backgroundColor: color }} onClick={cambiarC} >color</button>
         <input id="lista"></input>
         <button onClick={listaA}>Agregar a la lista</button>
-        <p></p>
+        <p>{compras}</p>
       </header>
     </div>
   );
