@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react"
+import logo from "./logo.svg"
+import "./App.css"
 
 function App() {
   //contador
@@ -17,10 +17,11 @@ function App() {
   };
 //lista de compras
   const [compras, setCompra]=useState()
+  const [lista, setLista]=useState([])
+
   const onChange = (event) => {
     setCompra(event.target.value)
   }
-  const lista = []
   const actionButton = () => {
     lista.push(compras)
     console.log(lista)
@@ -32,7 +33,7 @@ function App() {
         <p>{contador}</p>
         <button onClick={incrementar}>incrementar</button>
         <button style={{ backgroundColor: color }} onClick={cambiarC}>color</button>
-        <input onChange={onChange}></input>
+        <input value={compras} onChange={onChange}></input>
         <button onClick={actionButton} >Agregar a la lista</button>
         <p>{}</p>
       </header>
